@@ -1,13 +1,10 @@
 import localStorageApi from './localStorageApi';
 import movieGalleryCard from '../tamplates/movie-gallery-card.hbs';
-// import { pagination } from './paginstion';
-// import headerLibraryBtn from './refs';
 import placeholder from './spinner';
 
 const refs = {
     storageList: document.querySelector('.controls'),
     cardLibrary: document.querySelector('.library-movie-gallery'),
-    // paginationContainer: document.querySelector('.pagination'),
     headerLibraryBtn: document.querySelector('.header-library-btn'),
     activeBtn: document.querySelector('.btn-active'),
 };

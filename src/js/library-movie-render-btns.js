@@ -24,12 +24,11 @@ refs.watchedBtn.addEventListener('click', e => {
 // якщо клацаємо на queue, то стає активною вона
 refs.queueBtn.addEventListener('click', e => {
   e.preventDefault();
-  // getLenght('Queue');
+
   refs.watchedBtn.classList.remove('btn-active');
   refs.queueBtn.classList.add('btn-active');
   pagination.reset();
-  //getLenght('Queue');
-  //console.log(object);
+
   currentListFilms = arrQueueFilms;
 
   fetchMoviesFromLocalStorage(arrQueueFilms);
