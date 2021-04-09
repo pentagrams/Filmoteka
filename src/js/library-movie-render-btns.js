@@ -58,7 +58,6 @@ function fetchMoviesForId(movie_id) {
 function fetchMoviesFromLocalStorage(currentListFilms, page) {
   spinner.spin(refs.loadSpinner);
   const arr = currentListFilms;
-  console.log(arr);
   const arrOnePage = getDataFromLocalStorage(arr, page);
 
   refs.libraryGallery.innerHTML = '';
@@ -89,27 +88,6 @@ function getArrWatchedFilms() {
     return (arrWatchedFilms = [...arrPars]);
   }
   return [];
-  const arr = getArrWatchedFilms();
-  refs.alertMessage.innerHTML = '';
-  refs.libraryGallery.innerHTML = '';
-  if (arr.length === 0) {
-    alertMessage();
-    spinner.stop();
-  }
-  arr.map(film => {
-    fetchMoviesForId(film)
-      .then(results => {
-        const markup = movieGallaryCardTmpl(results);
-
-        refs.libraryGallery.insertAdjacentHTML('beforeend', markup);
-      })
-      .catch(error => {
-        console.log(error);
-      })
-      .finally(() => {
-        spinner.stop();
-      });
-  });
 }
 
 function getArrQueueFilms() {
@@ -148,7 +126,6 @@ const options = {
 };
 function getLenght(currentList = 'Watched') {
   const array = JSON.parse(localStorage.getItem(currentList));
-  console.log(array.length);
   return array.length;
 }
 const pagination = new Pagination(
@@ -165,6 +142,5 @@ function getDataFromLocalStorage(listName, page = 1) {
   const firstIndex = page * amountOfLoad - amountOfLoad;
   const lastIndex = page * amountOfLoad;
   const shortList = listName.slice(firstIndex, lastIndex);
-  console.log(shortList);
   return shortList;
 }
