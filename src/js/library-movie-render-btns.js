@@ -9,14 +9,12 @@ let arrQueueFilms = getArrQueueFilms();
 let currentListFilms = arrWatchedFilms;
 // якщо відкриваємо лібрарі, то watched активна,
 
- 
-
 refs.watchedBtn.classList.add('btn-active');
 fetchMoviesFromLocalStorage(currentListFilms);
 
 refs.watchedBtn.addEventListener('click', e => {
   e.preventDefault();
-
+  pagination.setTotalItems(getLenght('Watched'));
   refs.queueBtn.classList.remove('btn-active');
   refs.watchedBtn.classList.add('btn-active');
   pagination.reset();
@@ -25,13 +23,11 @@ refs.watchedBtn.addEventListener('click', e => {
   fetchMoviesFromLocalStorage(currentListFilms);
 });
 
-
 // якщо клацаємо на queue, то стає активною вона
-
 
 refs.queueBtn.addEventListener('click', e => {
   e.preventDefault();
-
+  pagination.setTotalItems(getLenght('Queue'));
   refs.watchedBtn.classList.remove('btn-active');
   refs.queueBtn.classList.add('btn-active');
   pagination.reset();
