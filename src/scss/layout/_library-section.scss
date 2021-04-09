@@ -36,20 +36,9 @@
       &:not(:nth-child(3n + 3)) {
         margin-right: 30px;
       }
-
-
-    }
-    
-    &:hover,
-    &:focus {
-      transform: scale(1.1);
-
     }
   }
-  
 }
-
-
 
 .pagination {
   width: 280px;
@@ -69,7 +58,6 @@
     margin-top: 16px;
   }
 }
-
 
 .alert-mesage {
   padding-top: 20px;
