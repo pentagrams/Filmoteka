@@ -23,6 +23,7 @@
     // height: 440px;
     margin-bottom: 20px;
     border-radius: 5px;
+    transition: transform 0.5s;
 
     @media screen and (min-width: $tablet) {
       width: 294px;
@@ -36,7 +37,13 @@
         margin-right: 30px;
       }
     }
+    
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
   }
+  
 }
 
 .pagination {
