@@ -15,8 +15,10 @@ async function onSearch(e) {
   try {
     clearArticlesConteiner();
     newsApiService.query = e.target.value;
-    if (newsApiService.query === '') {
+    if (newsApiService.query.trim() === '') {
       refs.spanRef.classList.add('js-notification');
+      // або такий варіант
+      // refs.spanRef.classList.remove('js-notification');
       toCreateGallery();
       return;
     } else {
@@ -24,8 +26,14 @@ async function onSearch(e) {
     }
     newsApiService.resetPage();
     const fetch = await newsApiService.fetchFilm();
+    if (fetch.total_results === 0) {
+      refs.spanRef.classList.add('js-notification');
+      toCreateGallery();
+      return;
+    } else {
+      refs.spanRef.classList.remove('js-notification');
+    }
     const marcup = await addArticlesMarcup(fetch.results);
-
     return marcup;
   } catch (error) {
     console.log('error');

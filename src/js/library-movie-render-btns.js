@@ -38,6 +38,7 @@ function alertMessage() {
   const messageSorry = document.createElement('p');
   messageSorry.classList.add('library-message');
   messageSorry.textContent = 'Sorry, there are no movies';
+  refs.alertMessage.innerHTML = '';
   refs.alertMessage.appendChild(messageSorry);
 }
 
@@ -88,6 +89,27 @@ function getArrWatchedFilms() {
     return (arrWatchedFilms = [...arrPars]);
   }
   return [];
+  const arr = getArrWatchedFilms();
+  refs.alertMessage.innerHTML = '';
+  refs.libraryGallery.innerHTML = '';
+  if (arr.length === 0) {
+    alertMessage();
+    spinner.stop();
+  }
+  arr.map(film => {
+    fetchMoviesForId(film)
+      .then(results => {
+        const markup = movieGallaryCardTmpl(results);
+
+        refs.libraryGallery.insertAdjacentHTML('beforeend', markup);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      .finally(() => {
+        spinner.stop();
+      });
+  });
 }
 
 function getArrQueueFilms() {
