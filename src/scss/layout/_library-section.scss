@@ -5,8 +5,8 @@
     padding-top: 20px;
     cursor: pointer;
 
-      @media screen and (max-width: 1023px) {
-        justify-content: space-between;
+    @media screen and (max-width: 1023px) {
+      justify-content: space-between;
     }
 
     @media screen and (min-width: $tablet) {
@@ -32,14 +32,13 @@
     @media screen and (min-width: $desktop) {
       width: 274px;
 
-        &:not(:nth-child(3n + 3)) {
-         margin-right: 30px;
-        }
+      &:not(:nth-child(3n + 3)) {
+        margin-right: 30px;
+      }
     }
   }
 }
 
-// контейнер для позиціонування
 .pagination {
   width: 280px;
   height: 40px;
@@ -47,7 +46,6 @@
   margin-right: auto;
   margin-bottom: 40px;
   margin-left: auto;
-  border: 1px solid black;
 
   @media screen and (min-width: $tablet) {
     width: 374px;

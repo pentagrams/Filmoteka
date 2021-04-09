@@ -5,13 +5,6 @@ import spinner from './spinner.js';
 
 const getMovies = new NewGetMovie();
 
-// const movieCard = ({ poster_path, title, genre_ids, release_date }) => ({
-//   poster_path: poster_path,
-//   title: title,
-//   genre_ids: genre_ids,
-//   release_date: release_date.split('-')[0],
-// });
-
 export default function toCreateGallery() {
   spinner.spin(refs.loadSpinner);
 

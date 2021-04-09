@@ -2,7 +2,6 @@ import refs from './refs';
 import movieGallaryCardTmpl from '../tamplates/library-gallery-card.hbs';
 import spinner from './spinner';
  
-// якщо відкриваємо лібрарі, то watched активна,
 refs.watchedBtn.classList.add('btn-active');
 fetchMoviesFromLocalStorage();
 
@@ -19,7 +18,6 @@ refs.watchedBtn.addEventListener('click', e => {
   fetchMoviesFromLocalStorage();
 });
  
-// якщо клацаємо на queue, то стає активною вона
 refs.queueBtn.addEventListener('click', e => {
   e.preventDefault();
 
@@ -39,7 +37,6 @@ function alertMessage() {
 }
 
 function fetchMoviesForId(movie_id) {
-  // шукає фильми по ID і добавляє розмітку в library
   const url = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=6df9a2b88a6cdc986e05b3daaeb09968`;
 
   return fetch(url)

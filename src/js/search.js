@@ -15,8 +15,6 @@ async function onSearch (e) {
     newsApiService.query = e.target.value;    
         if (newsApiService.query.trim() === '') {
             refs.spanRef.classList.add('js-notification');
-            // або такий варіант
-            // refs.spanRef.classList.remove('js-notification');
         toCreateGallery();              
         return 
         }
