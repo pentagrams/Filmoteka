@@ -9,16 +9,13 @@
 .header_navigation {
   display: inline-flex;
   justify-content: space-between;
-  // align-items: center;
   width: 100%;
   .logo {
     display: inline-flex;
     align-items: center;
     height: 35px;
-    // font-size: 30px;
     color: $color-white;
     margin-top: 41px;
-    // margin-left: 71px;
     .logo-svg {
       margin-right: 10px;
     }
@@ -29,7 +26,6 @@
   position: relative;
   display: flex;
   justify-content: center;
-  // margin-top: 113px;
   margin-top: 38px;
   font-size: 14px;
   color: $color-white;
@@ -38,7 +34,6 @@
     content: '';
     display: flex;
     justify-content: center;
-    // left: 0;
     margin-top: 16px;
     width: 336px;
     height: 0.5px;
@@ -50,7 +45,6 @@
     outline: none;
     background: none;
     border: none;
-    // border-bottom: 0.5px solid #FFFFFF;
     color: $color-white;
     &::placeholder {
       font-size: 14px;
@@ -60,11 +54,6 @@
   }
   .notification {
     display: none;
-
-    // width: 336px;
-    // height: 0.5px;
-
-    // border-radius: 2px;
   }
   .js-notification {
     color: #ff001b;
@@ -72,10 +61,8 @@
 
     font-size: 14px;
     line-height: 16px;
-    // content: '';
     display: flex;
     justify-content: center;
-    // left: 0;
     margin-top: 30px;
   }
 }
@@ -83,8 +70,6 @@
 .nav_link {
   display: inline-block;
   margin-top: 58px;
-  // height: 20px;
-  // margin-right: 71px;
   .home {
     position: relative;
     font-weight: 500;

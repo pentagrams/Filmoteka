@@ -9,6 +9,7 @@ const newsApiService = new NewApiService();
 
 refs.formRef.addEventListener('input', debounce(onSearch, 500));
 
+
 async function onSearch(e) {
   e.preventDefault();
   pagination.reset();
@@ -23,6 +24,20 @@ async function onSearch(e) {
       return;
     } else {
       refs.spanRef.classList.remove('js-notification');
+
+async function onSearch (e) {
+    e.preventDefault();
+    try {        
+     clearArticlesConteiner();     
+    newsApiService.query = e.target.value;    
+        if (newsApiService.query.trim() === '') {
+            refs.spanRef.classList.add('js-notification');
+        toCreateGallery();              
+        return 
+        }
+        else {
+        refs.spanRef.classList.remove('js-notification');
+
     }
     newsApiService.resetPage();
     const fetch = await newsApiService.fetchFilm();

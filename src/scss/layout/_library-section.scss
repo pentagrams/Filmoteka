@@ -23,6 +23,7 @@
     // height: 440px;
     margin-bottom: 20px;
     border-radius: 5px;
+    transition: transform 0.5s;
 
     @media screen and (min-width: $tablet) {
       width: 294px;
@@ -35,9 +36,40 @@
       &:not(:nth-child(3n + 3)) {
         margin-right: 30px;
       }
+
+
+    }
+    
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+
     }
   }
+  
 }
+
+
+
+.pagination {
+  width: 280px;
+  height: 40px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-left: auto;
+
+  @media screen and (min-width: $tablet) {
+    width: 374px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 16px;
+  }
+}
+
 
 .alert-mesage {
   padding-top: 20px;
