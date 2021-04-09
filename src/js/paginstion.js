@@ -51,3 +51,4 @@ function toCreateGallery() {
       spinner.stop();
     });
 }
+export default pagination;
