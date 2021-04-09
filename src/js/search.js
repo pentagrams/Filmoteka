@@ -10,21 +10,6 @@ const newsApiService = new NewApiService();
 refs.formRef.addEventListener('input', debounce(onSearch, 500));
 
 
-async function onSearch(e) {
-  e.preventDefault();
-  pagination.reset();
-  try {
-    clearArticlesConteiner();
-    newsApiService.query = e.target.value;
-    if (newsApiService.query.trim() === '') {
-      refs.spanRef.classList.add('js-notification');
-      // або такий варіант
-      // refs.spanRef.classList.remove('js-notification');
-      toCreateGallery();
-      return;
-    } else {
-      refs.spanRef.classList.remove('js-notification');
-
 async function onSearch (e) {
     e.preventDefault();
     try {        
@@ -56,7 +41,8 @@ async function onSearch (e) {
 }
 function addArticlesMarcup(newFilms) {
   return refs.gallery.insertAdjacentHTML('beforeend', filmTpl(newFilms));
-}
+      }
+      
 function clearArticlesConteiner() {
   refs.gallery.innerHTML = '';
 }
