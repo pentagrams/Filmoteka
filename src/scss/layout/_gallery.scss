@@ -8,8 +8,15 @@
 
   .move-card {
     width: 100%;
+    cursor: pointer;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
     img {
       width: 100%;
+      border-radius: 5px;
     }
   }
 
@@ -26,8 +33,6 @@
     font-family: Roboto;
 
     color: #000000;
-
-    color: #000000;
   }
   .move-info {
     font-family: Roboto;
@@ -37,6 +42,17 @@
     line-height: 1.33;
 
     color: #ff6b08;
+  }
+  .tui-pagination {
+    width: 280px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pg-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 @media screen and (min-width: $tablet) {
@@ -54,6 +70,13 @@
   }
   .text-conteiner {
     padding-top: 10px;
+  }
+  .pg-container {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .tui-pagination {
+    width: 374px;
   }
 }
 @media (min-width: $tablet) and (max-width: 1023px) {

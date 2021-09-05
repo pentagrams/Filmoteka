@@ -1,2 +1,4 @@
 import './styles.scss';
-import './js/watched-btn';
+import './js/library-movie-render-btns';
+import './js/modal';
+import './js/ourTeamModal';

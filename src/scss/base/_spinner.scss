@@ -1,7 +1,7 @@
 @keyframes spinner-line-fade-more {
   0%,
   100% {
-    opacity: 0; /* minimum opacity */
+    opacity: 0; 
   }
   1% {
     opacity: 1;
@@ -12,7 +12,7 @@
   0%,
   39%,
   100% {
-    opacity: 0.25; /* minimum opacity */
+    opacity: 0.25; 
   }
   40% {
     opacity: 1;
@@ -22,7 +22,7 @@
 @keyframes spinner-line-fade-default {
   0%,
   100% {
-    opacity: 0.22; /* minimum opacity */
+    opacity: 0.22; 
   }
   1% {
     opacity: 1;
@@ -33,7 +33,6 @@
   0%,
   25%,
   100% {
-    /* minimum scale and opacity */
     transform: scale(0.5);
     opacity: 0.25;
   }

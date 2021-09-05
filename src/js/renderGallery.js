@@ -5,11 +5,11 @@ import spinner from './spinner.js';
 
 const getMovies = new NewGetMovie();
 
-
-function toCreateGallery() {
+export default function toCreateGallery() {
   spinner.spin(refs.loadSpinner);
+
   getMovies
-    .fetchTrendingMovie()
+    .toCreateDataList()
     .then(results => {
       const markup = movieGalleryCardTpl(results);
       refs.gallery.innerHTML = markup;
@@ -18,8 +18,8 @@ function toCreateGallery() {
       console.log(error);
     })
     .finally(() => {
-            spinner.stop();
-        });
+      spinner.stop();
+    });
 }
 
 toCreateGallery();

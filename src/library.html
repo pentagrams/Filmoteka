@@ -11,7 +11,6 @@
     />
   </head>
   <body>
-    <!--Header library-->
     <header class="header-library">
       <div class="container">
         <div class="header-library-wraper">
@@ -20,8 +19,8 @@
               <svg class="header-library-svg">
                 <use href="./images/sprite.svg#icon-film"></use>
               </svg>
+              <h1 class="header-library-title">Filmoteka</h1>
             </a>
-            <h1 class="header-library-title">Filmoteka</h1>
           </div>
           <nav class="header-library-nav">
             <ul class="header-library-nav-list">
@@ -29,50 +28,57 @@
                 <a class="header-library-nav-link" href="/index.html">Home</a>
               </li>
               <li class="header-library-nav-page">
-                <a class="header-library-nav-link current" href="#"
+                <a class="header-library-nav-link current" href="/library.html"
                   >my library</a
                 >
               </li>
             </ul>
           </nav>
         </div>
-        <div class="header-library-buttons" id="tabs">
-          <div class="controls" data-controls>
-            <button
-              class="header-library-btn controls-current"
-              id="watched-btn-js"
-            >
-              <a class="controls-item" href="#watched">Watched</a>
+        <div class="header-library-buttons">
+          <div class="controls">
+            <button class="header-library-btn" id="watched-btn-js">
+              Watched
             </button>
-            <button class="header-library-btn" id="queue-btn-js">
-              <a class="controls-item" href="#queue">queue</a>
+            <button class="header-library-btn" id="queue-btn-js" value="Queue">
+              queue
             </button>
           </div>
         </div>
       </div>
     </header>
-    <!--Header library end-->
-    <!-- Library section -->
     <main class="library">
-      <div class="container panes" data-panes id="js-library-container">
+      <div class="container" id="js-spinner">
         <div class="alert-mesage"></div>
+
         <!-- Галерея для правильності позиціонування -->
-        <ul id="queue" class="library-movie-gallery" id="js-library-gallery">
-          <!-- <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li> -->
+
+        <ul
+          class="library-movie-gallery js-library-gallery"
+          id="js-gallery"
+        ></ul>
+        <!-- Контейнер для правильності позиціонування пагінації за необхідності-->
+        <div class="pg-container">
+          <div id="pagination" class="tui-pagination"></div>
+        </div>
+
+        <ul class="library-movie-gallery js-library-gallery" id="js-gallery">
         </ul>
-        <div class="pagination"></div>
+
       </div>
     </main>
-    <!-- End library section -->
+    <div class="lightbox js-lightbox" id="js-spinner">
+      <div class="lightbox__overlay"></div>
 
-    <!-- Footer -->
+      <div class="lightbox__content">
+        <img class="lightbox__image" />
+      </div>
+      <button type="button" class="lightbox__btn">
+        <svg class="close-modal-icon">
+          <use href="./images/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
     <footer class="footer">
       <div class="container">
         <ul class="footer-list">
@@ -81,7 +87,7 @@
             &nbsp;Developed with<svg class="footer-svg">
               <use href="./images/sprite.svg#icon-heart"></use></svg
             >by
-            <span class="footer-item-word">GoIT Students</span>
+            <span class="footer-item-word" id="js-our_team">GoIT Students</span>
           </li>
         </ul>
       </div>
