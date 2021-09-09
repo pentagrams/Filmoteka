@@ -1,49 +1,19 @@
 import Component from '../../templates/Component';
 import Container from '../container/Container';
-import { PageIds } from '../../templates/constants';
-
-const Buttons = [
-  {
-    id: PageIds.home,
-    text: 'Home',
-  },
-  {
-    id: PageIds.lib,
-    text: 'My library',
-  },
-];
+import { createLogo, createNavigation } from './createMarkup';
 
 class Header extends Component {
+  containerHTML = null;
   constructor(tagName, className) {
     super(tagName, className);
+    this.containerHTML = new Container('div', 'container').render();
   }
 
   createMarkup() {
-    const containerHTML = new Container('div', 'container');
-    const navHTML = document.createElement('nav');
-    navHTML.className = 'navigation';
-
-    const logoHTML = document.createElement('a');
-    logoHTML.className = 'navigation__logo';
-
-    const pageButtons = document.createElement('ul');
-    Buttons.forEach(({ id, text }) => {
-      const buttonHTML = document.createElement('li');
-      const navLinkHTML = document.createElement('a');
-
-      navLinkHTML.innerText = text;
-      navLinkHTML.href = `#${id}`;
-      navLinkHTML.className = 'navigation__link';
-      buttonHTML.className = 'navigation__item';
-
-      buttonHTML.append(navLinkHTML);
-      pageButtons.append(buttonHTML);
-    });
-    navHTML.append(logoHTML);
-    navHTML.append(pageButtons);
-    containerHTML.append(navHTML);
-
-    this.container.append(containerHTML.render());
+    const logoHTML = createLogo();
+    const navigationHTML = createNavigation(logoHTML);
+    this.containerHTML.append(navigationHTML);
+    this.container.append(this.containerHTML);
   }
 
   render() {

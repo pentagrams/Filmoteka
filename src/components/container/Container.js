@@ -6,7 +6,7 @@ class Container extends Component {
   }
 
   render() {
-    this.container;
+    return this.container;
   }
 }
 
