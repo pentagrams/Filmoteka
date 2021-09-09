@@ -1,60 +1,42 @@
-import { PageIds } from '../../templates/constants';
-
-const Buttons = [
-  {
-    id: PageIds.home,
-    text: 'Home',
-  },
-  {
-    id: PageIds.lib,
-    text: 'My library',
-  },
-];
-
-export const createLogo = () => {
+export const createLogo = (className, logoName) => {
   const logoHTML = document.createElement('a');
-  logoHTML.className = 'navigation__logo';
-
   const svgTag = document.createElement('svg');
-  svgTag.className = 'Logo__icon';
-
   const useTag = document.createElement('use');
+
+  logoHTML.className = `${className}__logo`;
+  svgTag.className = `${className}__logo-icon`;
+
   svgTag.append(useTag);
-
-  const logoText = document.createElement('p');
-  logoText.innerText = 'Filmoteka';
-  logoText.className = 'Logo__text';
-
   logoHTML.append(svgTag);
-  logoHTML.append(logoText);
+
+  if (logoName) {
+    const logoText = document.createElement('p');
+    logoText.className = `${className}__logo-text`;
+    logoText.innerText = logoName;
+    logoHTML.append(logoText);
+  }
 
   return logoHTML;
 };
 
-export const createNavigation = navLogo => {
-  const navHTML = document.createElement('nav');
-  navHTML.className = 'navigation';
-
+export const createButtonList = (arrayButtons, className) => {
   const navButtons = document.createElement('ul');
-  navButtons.className = 'navigation__list';
 
-  Buttons.forEach(({ id, text }) => {
+  navButtons.className = `${className}__list`;
+
+  arrayButtons.forEach(({ id, text }) => {
     const buttonHTML = document.createElement('li');
-    buttonHTML.className = 'navigation__item';
-
     const navLinkHTML = document.createElement('a');
+
+    buttonHTML.className = `${className}__item`;
+    navLinkHTML.className = `${className}__link`;
+
     navLinkHTML.innerText = text;
     navLinkHTML.href = `#${id}`;
-    navLinkHTML.className = 'navigation__link';
 
     buttonHTML.append(navLinkHTML);
     navButtons.append(buttonHTML);
   });
 
-  if (navLogo) {
-    navHTML.append(navLogo);
-  }
-  navHTML.append(navButtons);
-
-  return navHTML;
+  return navButtons;
 };

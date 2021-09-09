@@ -1,6 +1,18 @@
 import Component from '../../templates/Component';
 import Container from '../container/Container';
-import { createLogo, createNavigation } from './createMarkup';
+import { createLogo, createButtonList } from './createMarkup';
+import { PageIds } from '../../templates/constants';
+
+const Buttons = [
+  {
+    id: PageIds.home,
+    text: 'Home',
+  },
+  {
+    id: PageIds.lib,
+    text: 'My library',
+  },
+];
 
 class Header extends Component {
   containerHTML = null;
@@ -10,8 +22,12 @@ class Header extends Component {
   }
 
   createMarkup() {
-    const logoHTML = createLogo();
-    const navigationHTML = createNavigation(logoHTML);
+    const navigationHTML = document.createElement('nav');
+    const logoHTML = createLogo('navigation', 'Filmoteka');
+    const navHTML = createButtonList(Buttons, 'navigation');
+    navigationHTML.className = 'navigation';
+    navigationHTML.append(logoHTML);
+    navigationHTML.append(navHTML);
     this.containerHTML.append(navigationHTML);
     this.container.append(this.containerHTML);
   }
