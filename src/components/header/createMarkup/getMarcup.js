@@ -7,7 +7,7 @@ import options from '../../layoutOption';
 export const getNavigation = () => {
   const { logo, navigation } = options;
   const nav = document.createElement('nav');
-  const navlogo = createLogo(logo.className, logo.logoText, logo.href);
+  const navlogo = createLogo(logo.className, logo.logoText);
   const navButtons = createButtonList(navigation.array, navigation.className);
 
   nav.className = navigation.className;
@@ -19,7 +19,7 @@ export const getNavigation = () => {
 export const getForm = () => {
   const { input, form } = options;
   const inputHTML = createInput(input.className, input.type, input.name, input.placeholder);
-  const formHTML = createForm(inputHTML, form.className, form.id, form.href);
+  const formHTML = createForm(inputHTML, form.className, form.id);
   return formHTML;
 };
 

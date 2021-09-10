@@ -25,7 +25,6 @@ const option = {
   logo: {
     className: 'navigation',
     logoText: 'Filmoteka',
-    href: './image/sprite.svg#icon-film',
   },
   navigation: {
     className: 'navigation',
@@ -40,7 +39,6 @@ const option = {
   form: {
     className: 'form',
     id: 'search-form',
-    href: './image/sprite.svg#icon-search',
   },
   libraryButtons: {
     array: libButtons,

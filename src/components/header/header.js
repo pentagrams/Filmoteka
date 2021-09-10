@@ -6,27 +6,30 @@ import { getNavigation, getForm, getLibraryButtons } from './createMarkup/getMar
 
 class Header extends Component {
   wrapper = null;
+
   constructor(tagName, className) {
     super(tagName, className);
     this.wrapper = new Container('div', 'container').render();
   }
 
-  static switchHeaderContent(hash) {
+  switchHeaderContent(hash) {
     const form = getForm();
     const buttons = getLibraryButtons();
+    const { LibraryButtons, headerForm } = refs;
+
     if (hash === PageIds.home) {
       this.wrapper.append(form);
-      refs.libraryButtons.remove();
+      LibraryButtons.remove();
     } else if (hash === PageIds.lib) {
       this.wrapper.append(buttons);
-      refs.form.remove();
+      headerForm.remove();
     }
   }
 
   Router = () => {
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.slice(1);
-      Header.switchHeaderContent(hash);
+      this.switchHeaderContent(hash);
     });
   };
 

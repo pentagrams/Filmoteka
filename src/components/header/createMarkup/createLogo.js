@@ -1,22 +1,12 @@
-export const createLogo = (className, logoName, href) => {
+export const createLogo = (className, logoName) => {
   const logo = document.createElement('a');
-  const svg = document.createElement('svg');
-  const use = document.createElement('use');
+  const logoText = document.createElement('p');
 
   logo.className = `${className}__logo`;
-  svg.className = `${className}__logo-icon`;
+  logoText.className = `${className}__logo-text`;
+  logoText.innerText = logoName;
 
-  use.setAttribute('href', href);
-
-  svg.append(use);
-  logo.append(svg);
-
-  if (logoName) {
-    const logoText = document.createElement('p');
-    logoText.className = `${className}__logo-text`;
-    logoText.innerText = logoName;
-    logo.append(logoText);
-  }
+  logo.append(logoText);
 
   return logo;
 };
