@@ -1,39 +1,47 @@
 import Component from '../../templates/Component';
 import Container from '../container/Container';
-import { createLogo, createButtonList } from './createMarkup';
+import refs from '../../templates/refs';
 import { PageIds } from '../../templates/constants';
-
-const Buttons = [
-  {
-    id: PageIds.home,
-    text: 'Home',
-  },
-  {
-    id: PageIds.lib,
-    text: 'My library',
-  },
-];
+import { getNavigation, getForm, getLibraryButtons } from './createMarkup/getMarcup';
 
 class Header extends Component {
-  containerHTML = null;
+  wrapper = null;
   constructor(tagName, className) {
     super(tagName, className);
-    this.containerHTML = new Container('div', 'container').render();
+    this.wrapper = new Container('div', 'container').render();
   }
 
+  static switchHeaderContent(hash) {
+    const form = getForm();
+    const buttons = getLibraryButtons();
+    if (hash === PageIds.home) {
+      this.wrapper.append(form);
+      refs.libraryButtons.remove();
+    } else if (hash === PageIds.lib) {
+      this.wrapper.append(buttons);
+      refs.form.remove();
+    }
+  }
+
+  Router = () => {
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.slice(1);
+      Header.switchHeaderContent(hash);
+    });
+  };
+
   createMarkup() {
-    const navigationHTML = document.createElement('nav');
-    const logoHTML = createLogo('navigation', 'Filmoteka');
-    const navHTML = createButtonList(Buttons, 'navigation');
-    navigationHTML.className = 'navigation';
-    navigationHTML.append(logoHTML);
-    navigationHTML.append(navHTML);
-    this.containerHTML.append(navigationHTML);
-    this.container.append(this.containerHTML);
+    const navigation = getNavigation();
+    const defaultRederForm = getForm();
+    this.wrapper.append(navigation);
+    this.wrapper.append(defaultRederForm);
+    this.container.append(this.wrapper);
   }
 
   render() {
     this.createMarkup();
+    this.Router();
+
     return this.container;
   }
 }

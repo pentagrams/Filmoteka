@@ -30,7 +30,7 @@ class App {
     }
   }
 
-  RouteChange() {
+  Router() {
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.slice(1);
       App.renderNewPage(hash);
@@ -46,7 +46,7 @@ class App {
   run() {
     App.container.append(this.header.render());
     App.renderNewPage('home-page');
-    this.RouteChange();
+    this.Router();
   }
 }
 
