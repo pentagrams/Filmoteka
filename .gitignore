@@ -1,5 +1,7 @@
+.DS_Store
+
 # production
-/dist
+/build
 
 # Logs
 logs
@@ -66,3 +68,5 @@ typings/
 .env.development.local
 .env.test.local
 .env.production.local
+package-lock.json
+
