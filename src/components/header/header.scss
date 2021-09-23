@@ -1,0 +1,14 @@
+@import '../../styles/index.scss';
+
+@media screen and (min-width: 320px) {
+  .header {
+    background-color: black;
+    padding: 40px 0 40px 0;
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 38px;
+    }
+  }
+}

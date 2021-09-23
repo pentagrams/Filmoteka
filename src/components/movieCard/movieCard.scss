@@ -1,0 +1,67 @@
+@import '../../styles/index.scss';
+
+@media screen and (min-width: 320px) {
+  .movie-card {
+    &__poster {
+      display: block;
+      width: 280px;
+      height: 398px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    &__title {
+      color: $color-black;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 8px;
+    }
+
+    &__info {
+      display: flex;
+      color: $accent-color;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &__genres {
+      display: flex;
+      margin-right: 5px;
+    }
+
+    &__genres > li:not(:last-child) {
+      margin-right: 3px;
+    }
+  }
+
+  .movie-card:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .movie-card {
+    cursor: pointer;
+    margin: 15px;
+
+    &__poster {
+      width: 293px;
+      height: 398px;
+    }
+  }
+
+  .movie-card:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .movie-card {
+    &__poster {
+      width: 274px;
+      height: 398px;
+    }
+  }
+}

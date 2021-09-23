@@ -1,0 +1,23 @@
+@import '../../styles/index.scss';
+
+@media screen and (min-width: 320px) {
+  .navigation {
+    display: flex;
+
+    &__item:not(:last-child) {
+      margin-right: 38px;
+    }
+
+    &__link {
+      color: $color-white;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+
+      &--active {
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+  }
+}

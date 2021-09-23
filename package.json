@@ -1,58 +1,50 @@
 {
   "name": "filmoteka",
-  "version": "1.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --env.mode development --config ./webpack/config.js",
-    "build": "webpack --env.mode production --config ./webpack/config.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luxplanjay/Filmoteka.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pentagrams/Filmoteka/issues"
-  },
-  "homepage": "https://github.com/pentagrams/Filmoteka.git",
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/preset-env": "^7.11.5",
-    "autoprefixer": "^9.8.6",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^4.3.0",
-    "file-loader": "^6.1.0",
-    "friendly-errors-webpack-plugin": "^1.7.0",
-    "gh-pages": "^3.1.0",
-    "handlebars-loader": "^1.7.1",
-    "html-loader": "^1.3.1",
-    "html-webpack-plugin": "^4.5.0",
-    "img-loader": "^3.0.2",
-    "mini-css-extract-plugin": "^0.11.2",
-    "node-sass": "^4.14.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "postcss-loader": "^4.0.2",
-    "sass": "^1.32.8",
-    "sass-loader": "^10.0.2",
-    "style-loader": "^1.2.1",
-    "url-loader": "^4.1.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.1.4",
-    "webpackbar": "^4.0.0"
-  },
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "handlebars": "^4.7.6",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-react-app": "^6.0.0",
     "lodash.debounce": "^4.0.8",
-    "tui-pagination": "^3.4.0",
-    "spin.js": "^4.1.0"
+    "modern-normalize": "^1.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-media": "^1.10.0",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "sass": "^1.39.2",
+    "standard": "^16.0.3",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "prop-types": "^15.7.2"
   }
 }

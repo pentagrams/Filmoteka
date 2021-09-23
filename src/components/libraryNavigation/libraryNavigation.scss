@@ -1,0 +1,21 @@
+@import '../../styles/index.scss';
+
+@media screen and (min-width: 320px) {
+  .library-navigation {
+    display: flex;
+
+    &__item:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .library-navigation {
+    justify-content: center;
+
+    &__item:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}

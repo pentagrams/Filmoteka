@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  box-sizing: border-box;
+  font-family: $main-font;
+  font-style: normal;
+}
+img {
+  display: block;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
